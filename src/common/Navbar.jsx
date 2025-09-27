@@ -77,7 +77,7 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Links (Desktop) */}
-        <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+        <div className="hidden lg:flex items-center">
           <NavLink title="About" />
           <NavLink title="Services" />
           <NavLink title="Industries" dropdownItems={industriesDropdown} />
