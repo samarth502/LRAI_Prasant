@@ -10,7 +10,7 @@ const NavLink = ({ title, dropdownItems }) => {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <a href="#" className="uppercase flex items-center space-x-2 py-2 px-4 text-lg font-medium text-gray-200 hover:text-green-400 transition-colors duration-300">
+      <a href="#" className="uppercase flex items-center space-x-2 py-2 px-4 text-sm font-medium text-gray-200 hover:text-green-400 transition-colors duration-300">
         <span>{title}</span>
         {dropdownItems && (
           <svg
