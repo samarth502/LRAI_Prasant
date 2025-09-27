@@ -10,7 +10,7 @@ const NavLink = ({ title, dropdownItems }) => {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <a href="#" className="flex items-center space-x-2 py-2 px-4 text-lg font-medium text-gray-200 hover:text-green-400 transition-colors duration-300">
+      <a href="#" className="uppercase flex items-center space-x-2 py-2 px-4 text-lg font-medium text-gray-200 hover:text-green-400 transition-colors duration-300">
         <span>{title}</span>
         {dropdownItems && (
           <svg
@@ -62,15 +62,18 @@ const Navbar = () => {
     <div className="bg-gradient-to-br from-gray-900 via-gray-950 to-black font-sans antialiased text-white">
 
       {/* Navbar Container - ADDED fixed, top-0, and w-full */}
-      <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-lg z-50">
+      <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-2 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-lg z-50">
         {/* Logo Section */}
         <div className="flex items-center">
-          <a href="#" className="flex-shrink-0">
-            <span className="text-2xl md:text-3xl font-extrabold text-white">
-              INNOVATION <span className="text-green-500">M</span>
-            </span>
-            <p className="text-xs md:text-sm text-gray-400 font-light tracking-wide">Technology Solutions</p>
-          </a>
+         <a href="#" className="flex flex-col items-center flex-shrink-0 space-y-1">
+  <img
+    src="/logo.jpeg"
+    alt="Logo"
+    className="w-16 h-16 rounded-full border-2 border-gray-300 shadow-md object-cover hover:scale-105 transition-transform duration-300"
+  />
+ 
+</a>
+
         </div>
 
         {/* Navigation Links (Desktop) */}
