@@ -5,6 +5,9 @@ import './App.css'
 import Navbar from './common/Navbar'
 import Hero from './Components/HeroSection/Hero'
 import ServiceAsSoft from './Components/ServiceAsSoftware/ServiceAsSoft'
+import AnimatedResults from './Components/ProvenResults/ProvenResults'
+import UltraProProducts from './Components/UltraProProducts/UltraProProducts'
+// import ProvenResults from './Components/ProvenResults/ProvenResults'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +17,13 @@ function App() {
      <Navbar/>
      <Hero/>
      <ServiceAsSoft/>
+   
+      {/* The component with the dynamic scrolling animation */}
+      <AnimatedResults />
+
+      <UltraProProducts/>
+
+      
     </>
   )
 }
