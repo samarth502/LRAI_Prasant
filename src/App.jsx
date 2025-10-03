@@ -26,7 +26,7 @@ function App() {
       <AnimatedResults />
 
       <UltraProProducts/>
-      <IndustriesTransformedOne/>
+      {/* <IndustriesTransformedOne/> */}
       <ClientTestimonialsOne/>
       <PartnerWithInovative/>
       <FrequentlyAsked/>
