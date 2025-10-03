@@ -174,8 +174,8 @@ const AnimatedProductCard = ({ icon, title, description, metrics, isAccent }) =>
 // --- Main Component ---
 const UltraProProducts = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <div className=" bg-gray-50 py-5 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[90%] mx-auto">
         
         {/* Header Section */}
         <div className="text-center mb-16">

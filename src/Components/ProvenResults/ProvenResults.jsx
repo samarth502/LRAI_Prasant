@@ -48,13 +48,13 @@ const AnimatedMetricItem = ({ end, suffix, color, label }) => {
 
 const AnimatedResults = () => {
   return (
-    <div className="py-24 px-6 min-h-screen bg-gradient-to-br from-teal-50 via-white to-blue-50">
-      <div className="max-w-7xl mx-auto text-center">
+    <div className="py-10 px-6  bg-gradient-to-br from-teal-50 via-white to-blue-50">
+      <div className="max-w-[90%] mx-auto text-center">
         {/* Title and Subtitle Section */}
         <h2 className="text-5xl font-extrabold text-gray-800 mb-4 tracking-tight">
           Proven Results Across Industries
         </h2>
-        <p className="text-lg text-gray-600 mb-20 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto leading-relaxed">
           Our Service As a Software approach delivers measurable outcomes that transform business operations.
         </p>
 
