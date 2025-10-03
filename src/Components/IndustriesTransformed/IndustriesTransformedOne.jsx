@@ -88,7 +88,7 @@ const IndustryCard = ({ title, description, color, hoverColor }) => {
 };
 
 // Main Application Component
-const IndustriesTransformed = () => {
+const IndustriesTransformedOne = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white font-sans p-4 sm:p-8 lg:p-12">
       
@@ -134,4 +134,4 @@ const IndustriesTransformed = () => {
   );
 };
 
-export default IndustriesTransformed
+export default IndustriesTransformedOne

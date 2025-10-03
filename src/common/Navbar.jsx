@@ -121,7 +121,7 @@ const Navbar = () => {
 
       {/* Placeholder div for fixed navbar height - RECOMMENDED for content below */}
       <div className="h-20"></div>
-
+      
       {/* Mobile Menu (conditionally rendered) */}
       <div
         className={`fixed inset-x-0 top-16 bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg shadow-lg z-40 transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}
