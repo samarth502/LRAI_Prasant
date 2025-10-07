@@ -55,8 +55,7 @@ const AnimatedResults = () => {
           Proven Results Across Industries
         </h2>
         <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto leading-relaxed">
-          Our Service As a Software approach delivers measurable outcomes that transform business operations.
-        </p>
+Aim, Amplify & Achieve! Unlock Limitless Possibilities with AI        </p>
 
         {/* Metrics Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
