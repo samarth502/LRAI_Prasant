@@ -126,7 +126,7 @@ const Hero = () => {
             <h1 className="text-5xl font-extrabold text-teal-400 tracking-tighter uppercase leading-tight">
               RLAI
             </h1>
-            <p className="text-lg font-light text-gray-300 mt-2 tracking-wide border-b border-teal-500/40 pb-3">
+            <p className="text-lg font-light uppercase text-gray-300 mt-2 tracking-wide border-b border-teal-500/40 pb-3">
               Pioneering Intelligent Solutions for a Smarter Future
             </p>
           </motion.div>

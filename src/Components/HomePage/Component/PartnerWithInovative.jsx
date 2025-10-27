@@ -7,7 +7,7 @@ const tabContent = [
     id: 'proven_record',
     label: 'Proven Record with MSMEs',
     icon: Briefcase,
-    color: 'emerald',
+    color: 'indigo',
     details: [
       "2000+ Projects Delivered",
       "Fortune 500 Experience",
@@ -22,7 +22,7 @@ const tabContent = [
     id: 'innovation_growth',
     label: 'Innovation That Drives Growth',
     icon: Zap,
-    color: 'sky',
+    color: 'indigo',
     details: [
       "Agile Product Iteration",
       "Future-Ready Tech Stacks",
@@ -67,6 +67,8 @@ const TabButton = ({ isActive, label, onClick, color }) => {
   );
 };
 
+
+
 // --- Main App Component ---
 const PartnerWithInovative = () => {
   const [activeTab, setActiveTab] = useState(tabContent[0].id);
@@ -74,15 +76,16 @@ const PartnerWithInovative = () => {
   const activeData = tabContent.find(tab => tab.id === activeTab);
 
   return (
-    <div className=" bg-gray-50 font-sans p-4 antialiased">
+    <div className=" bg-gray-50 font-sans  antialiased">
       <div className="px-5 py-2 lg:py-2">
         
         {/* Header Section */}
         <header className="mb-12 text-center">
-          <p className="text-lg font-semibold text-emerald-600 uppercase tracking-widest mb-2">
+          <p className="text-lg font-semibold text-indigo-600 uppercase tracking-widest mb-2">
             Why Partner with InnovationM?
           </p>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+          <h1 className="uppercase text-5xl font-semibold text-gray-900 tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600
+">
             Engineering Digital Success with Innovation & Expertise
           </h1>
           <p className="text-gray-600 max-w-3xl mx-auto">

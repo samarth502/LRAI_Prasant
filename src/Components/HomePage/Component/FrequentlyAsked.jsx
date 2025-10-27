@@ -58,7 +58,7 @@ const FAQItem = ({ question, answer }) => {
     <div className="bg-white rounded-xl shadow-lg transition-all duration-300 overflow-hidden">
       {/* Question Header (Toggle Button) */}
       <button
-        className="flex justify-between items-start w-full text-left p-6 md:p-8 bg-green-50/70 hover:bg-green-100 transition-colors duration-200 focus:outline-none"
+        className="flex justify-between items-start w-full text-left p-6 md:p-8  bg-indigo-100 transition-colors duration-200 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
@@ -67,9 +67,9 @@ const FAQItem = ({ question, answer }) => {
         </span>
         <span className="ml-4 flex-shrink-0">
           {isOpen ? (
-            <Minus className="w-6 h-6 text-emerald-500 transition-transform duration-300" />
+            <Minus className="w-6 h-6 text-indigo-500 transition-transform duration-300" />
           ) : (
-            <Plus className="w-6 h-6 text-green-600 transition-transform duration-300" />
+            <Plus className="w-6 h-6 text-indigo-600 transition-transform duration-300" />
           )}
         </span>
       </button>
@@ -99,11 +99,11 @@ const FrequentlyAsked = () => {
 
   return (
     <div className="min-h-screen bg-white font-sans p-4 antialiased">
-      <div className="max-w-7xl mx-auto py-12 lg:py-20">
+      <div className="max-w-[96%] mx-auto py-9 lg:py-2">
         
         {/* Header Section */}
-        <header className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+        <header className="mb-8 text-center">
+          <h1 className="uppercase text-5xl font-extrabold text-gray-900 tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
             Frequently Asked Questions
           </h1>
         </header>

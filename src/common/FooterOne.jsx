@@ -40,7 +40,7 @@ const FooterOne = () => {
     const LogoPlaceholder = () => (
         <div className="flex items-center space-x-2">
             <svg 
-                className="w-8 h-8 text-emerald-500" 
+                className="w-8 h-8 text-indigo-500" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24" 
@@ -48,7 +48,7 @@ const FooterOne = () => {
             >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
-            <span className="text-2xl font-extrabold text-gray-800">RL<span className="text-emerald-500">AI</span></span>
+            <span className="text-2xl font-extrabold text-gray-800">RL<span className="text-indigo-500 ">AI</span></span>
             <p className="text-xs font-medium text-gray-500 tracking-wider">Technology Solutions</p>
         </div>
     );
@@ -69,16 +69,16 @@ const FooterOne = () => {
                         
                         {/* Social Icons */}
                         <div className="flex space-x-3 pt-2">
-                            <a href="#" aria-label="LinkedIn" className="p-2 rounded-full  text-gray-700 bg-emerald-500 text-white transition-colors duration-200">
+                            <a href="#" aria-label="LinkedIn" className="p-2 rounded-full   bg-indigo-500 text-white transition-colors duration-200">
                                 <Linkedin className="w-5 h-5" />
                             </a>
-                            <a href="#" aria-label="Facebook" className="p-2 rounded-full text-gray-700 bg-emerald-500 text-white transition-colors duration-200">
+                            <a href="#" aria-label="Facebook" className="p-2 rounded-full text-gray-700 bg-indigo-500 text-white transition-colors duration-200">
                                 <Facebook className="w-5 h-5" />
                             </a>
-                            <a href="#" aria-label="Twitter" className="p-2 rounded-full text-gray-700 bg-emerald-500 text-white transition-colors duration-200">
+                            <a href="#" aria-label="Twitter" className="p-2 rounded-full text-gray-700 bg-indigo-500 text-white transition-colors duration-200">
                                 <Twitter className="w-5 h-5" />
                             </a>
-                            <a href="#" aria-label="Instagram" className="p-2 rounded-full text-gray-700 bg-emerald-500 text-white transition-colors duration-200">
+                            <a href="#" aria-label="Instagram" className="p-2 rounded-full text-gray-700 bg-indigo-500 text-white transition-colors duration-200">
                                 <Instagram className="w-5 h-5" />
                             </a>
                         </div>
@@ -100,7 +100,7 @@ const FooterOne = () => {
                     <div className="lg:col-span-1">
                          <h4 className="text-lg font-bold text-gray-800 mb-4 uppercase tracking-wider">Get in Touch</h4>
                          <div className="flex items-center space-x-2">
-                            <Mail className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                            <Mail className="w-5 h-5 text-indigo-500 flex-shrink-0" />
                             <a 
                                 href="mailto:XYZ@innovationm.com" 
                                 className="text-gray-600 hover:text-emerald-500 transition-colors duration-200 text-base font-medium"

@@ -51,7 +51,7 @@ const AnimatedResults = () => {
     <div className="py-10 px-6  bg-gradient-to-br from-teal-50 via-white to-blue-50">
       <div className="max-w-[90%] mx-auto text-center">
         {/* Title and Subtitle Section */}
-        <h2 className="text-5xl font-extrabold text-gray-800 mb-4 tracking-tight">
+        <h2 className=" uppercase text-5xl font-extrabold text-gray-800 mb-4 tracking-tight">
           Proven Results Across Industries
         </h2>
         <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto leading-relaxed">

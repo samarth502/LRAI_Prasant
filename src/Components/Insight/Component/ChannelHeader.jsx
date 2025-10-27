@@ -19,7 +19,7 @@ function ChannelHeader() {
   const bannerImageUrl = "https://yt3.googleusercontent.com/RxkGNWutZ0qn2saIxc5zemMSB0yXBl81msTnBmCaI071i114hR3kjpCPnAnjRNhNS-QziasDIQ=w2560-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj";
 
   return (
-    <header className="bg-white shadow-lg  mb-12">
+    <header className="bg-white shadow-lg  mb-5">
       {/* 1. Banner (Aapke motto ke saath) */}
       <div 
         className="h-48 md:h-64  flex items-center justify-center p-4 bg-cover bg-center"

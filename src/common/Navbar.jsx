@@ -1,341 +1,242 @@
-// import React, { useState, useEffect } from 'react';
-
-// // Reusable Dropdown and Nav Link component with smooth transitions
-// const NavLink = ({ title, dropdownItems }) => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   return (
-//     <div
-//       className="relative group"
-//       onMouseEnter={() => setIsOpen(true)}
-//       onMouseLeave={() => setIsOpen(false)}
-//     >
-//       <a href="#" className="uppercase flex items-center space-x-2 py-2 px-4 text-sm font-medium text-gray-200 hover:text-green-400 transition-colors duration-300">
-//         <span>{title}</span>
-//         {dropdownItems && (
-//           <svg
-//             className={`w-4 h-4 text-gray-400 transition-transform duration-300 transform group-hover:rotate-180`}
-//             fill="currentColor"
-//             viewBox="0 0 20 20"
-//             xmlns="http://www.w3.org/2000/svg"
-//           >
-//             <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
-//           </svg>
-//         )}
-//       </a>
-//       {dropdownItems && (
-//         <div className={`absolute top-full left-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-95 group-hover:scale-100 origin-top z-20`}>
-//           <ul className="py-2">
-//             {dropdownItems.map((item, index) => (
-//               <li key={index}>
-//                 <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
-//                   {item}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// const Navbar = () => {
-//   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-//   // Close mobile menu on resize to prevent layout issues
-//   useEffect(() => {
-//     const handleResize = () => {
-//       if (window.innerWidth >= 1024) {
-//         setIsMobileMenuOpen(false);
-//       }
-//     };
-//     window.addEventListener('resize', handleResize);
-//     return () => window.removeEventListener('resize', handleResize);
-//   }, []);
-
-//   const industriesDropdown = ["Manufacturing", "Media", "Healthcare", "Technology"];
-//   const resourcesDropdown = ["Blog", "Documentation"];
-
-//   return (
-//     // Outer container for overall styling
-//     <div className="bg-gradient-to-br from-gray-900 via-gray-950 to-black font-sans antialiased text-white">
-
-//       {/* Navbar Container - ADDED fixed, top-0, and w-full */}
-//       <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-2 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-lg z-50">
-//         {/* Logo Section */}
-//         <div className="flex items-center">
-//          <a href="#" className="flex flex-col items-center flex-shrink-0 space-y-1">
-//   <img
-//     src="/logo.jpeg"
-//     alt="Logo"
-//     className="w-16 h-16 rounded-full border-2 border-gray-300 shadow-md object-cover hover:scale-105 transition-transform duration-300"
-//   />
- 
-// </a>
-
-//         </div>
-
-//         {/* Navigation Links (Desktop) */}
-//         <div className="hidden lg:flex items-center">
-//           <NavLink title="About" />
-//           <NavLink title="Services" />
-//            <NavLink title="Insights" />
-//           <NavLink title="Industries" dropdownItems={industriesDropdown} />
-//           <NavLink title="Resources" dropdownItems={resourcesDropdown} />
-//           <NavLink title="Case Studies" />
-//         </div>
-
-//         {/* Action Button */}
-//         <div className="hidden lg:flex items-center">
-//           <a
-//             href="#"
-//             className="px-8 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full font-bold shadow-md transform hover:scale-105 transition-all duration-300 ease-in-out"
-//           >
-//             Get in Touch
-//           </a>
-//         </div>
-
-//         {/* Mobile Menu Button */}
-//         <div className="lg:hidden">
-//           <button
-//             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-//             type="button"
-//             className="p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 rounded-md transition-colors duration-200"
-//           >
-//             <svg
-//               className="h-11 w-11"
-//               fill="none"
-//               viewBox="0 0 24 24"
-//               stroke="currentColor"
-//             >
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 strokeWidth="2"
-//                 d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-//               />
-//             </svg>
-//           </button>
-//         </div>
-//       </nav>
-
-//       {/* Placeholder div for fixed navbar height - RECOMMENDED for content below */}
-//       <div className="h-20"></div>
-      
-//       {/* Mobile Menu (conditionally rendered) */}
-//       <div
-//         className={`fixed inset-x-0 top-16 bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg shadow-lg z-40 transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}
-//       >
-//         <div className="flex flex-col items-start p-6 space-y-4">
-//           <a href="#" className="NavbarA block w-full py-2 text-lg text-gray-200 hover:text-green-400 transition-colors duration-200">
-//             About
-//           </a>
-//           <a href="#" className=" NavbarA block w-full py-2 text-lg text-gray-200 hover:text-green-400 transition-colors duration-200">
-//             Services
-//           </a>
-//           {/* NavLink component will handle its own internal dropdown logic, but it's nested here for mobile */}
-//           <div className="w-full">
-//             <NavLink title="Industries" dropdownItems={industriesDropdown} />
-//           </div>
-//           <div className="w-full">
-//             <NavLink title="Resources" dropdownItems={resourcesDropdown} />
-//           </div>
-//           <a href="#" className=" NavbarA block w-full py-2 text-lg text-gray-200 hover:text-green-400 transition-colors duration-200">
-//             Case Studies
-//           </a>
-//           {/* You might want to uncomment the mobile action button */}
-//           {/* <a
-//             href="#"
-//             className="w-full text-center px-8 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full font-bold shadow-md hover:opacity-90 transition-opacity duration-300"
-//           >
-//             Get in Touch
-//           </a> */}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
-
-
-
 import React, { useState, useEffect } from 'react';
-// MUST import 'Link' from react-router-dom for internal navigation
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom'; 
+import { ChevronDown, Menu, X, Rocket, Zap, Users } from 'lucide-react';
 
-// Reusable Dropdown and Nav Link component with smooth transitions
-// MODIFIED to accept a 'to' prop
-const NavLink = ({ title, dropdownItems, to }) => {
-  const [isOpen, setIsOpen] = useState(false);
+// --- Framer Motion Variants for Animations ---
 
-  // If dropdownItems exist, treat it as a hover-only menu (using <a> with no route)
-  if (dropdownItems) {
+// Navbar Container entry animation
+const navbarVariants = {
+    hidden: { y: -50, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 100, damping: 20, delay: 0.1 } },
+};
+
+// Mobile Menu slide-in/out animation
+const mobileMenuVariants = {
+    hidden: { opacity: 0, height: 0, transition: { duration: 0.3 } },
+    visible: { 
+        opacity: 1, 
+        height: 'auto', 
+        transition: { type: 'spring', stiffness: 100, damping: 20, staggerChildren: 0.05, delayChildren: 0.2 } 
+    },
+};
+
+// Individual item animation for mobile menu
+const mobileItemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+};
+
+// --- Reusable Nav Link Component ---
+
+const NavLink = ({ title, dropdownItems, to, onClick }) => {
+    // Only used for complex dropdowns (e.g., Industries, Resources)
+    if (dropdownItems) {
+        return (
+            <div className="relative group flex items-center h-full">
+                <a href="#" className="uppercase flex items-center space-x-2 py-2 px-4 text-sm font-semibold text-gray-200 hover:text-indigo-400 transition-colors duration-300 group-hover:text-indigo-400">
+                    <span>{title}</span>
+                    <ChevronDown size={14} className={`text-gray-400 transition-transform duration-300 transform group-hover:rotate-180`} />
+                </a>
+                
+                {/* Desktop Dropdown Content */}
+                <div className="absolute top-full -left-4 mt-2 w-48 bg-gray-800/95 backdrop-blur-md rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-95 group-hover:scale-100 origin-top z-20 border border-gray-700">
+                    <ul className="py-2">
+                        {dropdownItems.map((item, index) => (
+                            <li key={index}>
+                                <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-indigo-700/50 hover:text-white transition-colors duration-200">
+                                    {item}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        );
+    }
+
+    // Standard Nav Link (uses Link for routing)
     return (
-      <div
-        className="relative group"
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
-      >
-        {/* Dropdown links use standard <a> tag with no active routing */}
-        <a href="#" className="uppercase flex items-center space-x-2 py-2 px-4 text-sm font-medium text-gray-200 hover:text-green-400 transition-colors duration-300">
-          <span>{title}</span>
-          <svg
-            className={`w-4 h-4 text-gray-400 transition-transform duration-300 transform group-hover:rotate-180`}
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
-          </svg>
-        </a>
-        {dropdownItems && (
-          <div className={`absolute top-full left-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-95 group-hover:scale-100 origin-top z-20`}>
-            <ul className="py-2">
-              {dropdownItems.map((item, index) => (
-                <li key={index}>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
+        <Link 
+            to={to || "#"}
+            onClick={onClick}
+            className="group relative h-full flex items-center px-4 py-2 text-sm font-semibold uppercase text-gray-300 transition-colors duration-300 hover:text-indigo-400"
+        >
+            <span>{title}</span>
+            {/* Subtle bottom line indicator on hover */}
+            <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-indigo-500 rounded-full group-hover:w-3/4 transition-all duration-300 transform -translate-x-1/2"></span>
+        </Link>
     );
-  }
-
-  // If no dropdownItems, use <Link> for proper routing
-  return (
-    <Link 
-        to={to || "#"} // Use 'to' prop for routing
-        className="uppercase flex items-center space-x-2 py-2 px-4 text-sm font-medium text-gray-200 hover:text-green-400 transition-colors duration-300"
-    >
-        <span>{title}</span>
-    </Link>
-  );
 };
 
-// Navbar component with corrected routing for Insights and other main links
-const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+// --- Main Premium Navbar Component ---
 
-  // Close mobile menu on resize to prevent layout issues
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
+const PremiumNavbar = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    // Close mobile menu on resize and check scroll position
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1024) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 10);
+        };
+        
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('scroll', handleScroll);
+        
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const industriesDropdown = ["Manufacturing", "Media", "Healthcare", "Technology"];
+    const resourcesDropdown = ["Blog", "Documentation"];
+
+    // Mobile Menu Close Handler
+    const handleLinkClick = () => {
         setIsMobileMenuOpen(false);
-      }
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
-  const industriesDropdown = ["Manufacturing", "Media", "Healthcare", "Technology"];
-  const resourcesDropdown = ["Blog", "Documentation"];
 
-  return (
-    // Outer container for overall styling
-    <div className="bg-gradient-to-br from-gray-900 via-gray-950 to-black font-sans antialiased text-white">
+    return (
+        // Outer Wrapper (Required for full component setup)
+        <div className="font-sans antialiased text-white">
 
-      {/* Navbar Container */}
-      <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-2 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-lg z-50">
-        {/* Logo Section - CORRECTED to use <Link> to homepage ("/") */}
-        <div className="flex items-center">
-          <Link to="/" className="flex flex-col items-center flex-shrink-0 space-y-1">
-            <img
-              src="https://yt3.googleusercontent.com/AYkmqM1WLvgkcCxgG-ueWKa996bkx8BCipUKDGbqkb7cq8CF4ErBtHGhTu4opnqAEzWrn4s_dg=s160-c-k-c0x00ffffff-no-rj" // Using placeholder image URL
-              alt="Logo"
-              className="w-16 h-16 rounded-full border-2 border-gray-300 shadow-md object-cover hover:scale-105 transition-transform duration-300"
-            />
-          </Link>
-        </div>
-
-        {/* Navigation Links (Desktop) - CORRECTED to use 'to' prop */}
-        <div className="hidden lg:flex items-center">
-          <NavLink title="About" to="/about" />
-          <NavLink title="Services" to="/services" />
-          <NavLink title="Insights" to="/insights" /> {/* CRITICAL FIX: Routes to /insights */}
-          <NavLink title="Industries" dropdownItems={industriesDropdown} />
-          <NavLink title="Resources" dropdownItems={resourcesDropdown} />
-          <NavLink title="Case Studies" to="/case-studies" />
-        </div>
-
-        {/* Action Button */}
-        <div className="hidden lg:flex items-center">
-          <Link
-            to="/contact" // Assuming a contact route
-            className="px-8 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full font-bold shadow-md transform hover:scale-105 transition-all duration-300 ease-in-out"
-          >
-            Get in Touch
-          </Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden">
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            type="button"
-            className="p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 rounded-md transition-colors duration-200"
-          >
-            <svg
-              className="h-11 w-11"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            {/* Fixed Navbar Container (Animated & Glassy) */}
+            <motion.nav
+                initial="hidden"
+                animate="visible"
+                variants={navbarVariants}
+                className={`
+                    fixed top-0 left-0 w-full flex items-center justify-between px-6 py-3 md:py-4 transition-all duration-300 
+                    bg-black backdrop-filter backdrop-blur-xl z-50
+                    ${scrolled ? 'shadow-2xl border-b border-indigo-900/50' : 'border-b border-transparent'}
+                `}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-              />
-            </svg>
-          </button>
-        </div>
-      </nav>
+                
+             {/* Logo Section - UPDATED TO USE UPLOADED IMAGE */}
+                <div className="flex items-center">
+                    <Link to="/" className="flex items-center flex-shrink-0 space-x-3 group">
+                        
+                        {/* --- LOGO IMAGE INSERTED HERE --- */}
+                        <img 
+                            src="https://yt3.googleusercontent.com/AYkmqM1WLvgkcCxgG-ueWKa996bkx8BCipUKDGbqkb7cq8CF4ErBtHGhTu4opnqAEzWrn4s_dg=s160-c-k-c0x00ffffff-no-rj"
+                            alt="Company Logo"
+                            // Styling for a premium, slightly animated look
+                            className="w-18 h-18 rounded-full object-cover transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-6 border-2 border-indigo-400 shadow-xl"
+                        />
+                        {/* ---------------------------------- */}
 
-      {/* Placeholder div for fixed navbar height */}
-      <div className="h-20"></div>
-      
-      {/* Mobile Menu (conditionally rendered) - CORRECTED links to use <Link> */}
-      <div
-        className={`fixed inset-x-0 top-16 bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg shadow-lg z-40 transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}
-      >
-        <div className="flex flex-col items-start p-6 space-y-4">
-          <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="NavbarA block w-full py-2 text-lg text-gray-200 hover:text-green-400 transition-colors duration-200">
-            About
-          </Link>
-          <Link to="/services" onClick={() => setIsMobileMenuOpen(false)} className=" NavbarA block w-full py-2 text-lg text-gray-200 hover:text-green-400 transition-colors duration-200">
-            Services
-          </Link>
-          <Link to="/insights" onClick={() => setIsMobileMenuOpen(false)} className=" NavbarA block w-full py-2 text-lg text-gray-200 hover:text-green-400 transition-colors duration-200">
-            Insights {/* CRITICAL FIX: Routes to /insights on mobile */}
-          </Link>
-          
-          {/* NavLink component will handle its own internal dropdown logic, but it's nested here for mobile */}
-          <div className="w-full">
-            <NavLink title="Industries" dropdownItems={industriesDropdown} />
-          </div>
-          <div className="w-full">
-            <NavLink title="Resources" dropdownItems={resourcesDropdown} />
-          </div>
-          
-          <Link to="/case-studies" onClick={() => setIsMobileMenuOpen(false)} className=" NavbarA block w-full py-2 text-lg text-gray-200 hover:text-green-400 transition-colors duration-200">
-            Case Studies
-          </Link>
+                    </Link>
+                </div>
 
-          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}
-            className="w-full text-center px-8 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full font-bold shadow-md hover:opacity-90 transition-opacity duration-300"
-          >
-            Get in Touch
-          </Link>
+                {/* Navigation Links (Desktop) */}
+                <div className="hidden lg:flex items-center h-full space-x-2">
+                    <NavLink title="Home" to="/" />
+                    <NavLink title="About" to="/about" />
+                    <NavLink title="Services" to="/services" />
+                    <NavLink title="Demo Video" to="/insights" />
+                    {/* <NavLink title="Industries" dropdownItems={industriesDropdown} />
+                    <NavLink title="Resources" dropdownItems={resourcesDropdown} /> */}
+                    {/* <NavLink title="Case Studies" to="/case-studies" /> */}
+                </div>
+
+                {/* Action Button */}
+                <div className="hidden lg:flex items-center">
+                    <Link
+                        to="/contact"
+                        className="
+                          px-6 py-2.5 text-sm font-bold rounded-full 
+                          bg-gradient-to-r from-indigo-500 to-purple-600 text-white 
+                          shadow-lg shadow-indigo-500/30 hover:shadow-indigo-400/50
+                          transform hover:scale-[1.03] transition-all duration-300 ease-in-out
+                          flex items-center space-x-2
+                        "
+                    >
+                        <Users size={18} className="text-white"/>
+                        <span>Contact Us</span>
+                    </Link>
+                </div>
+
+                {/* Mobile Menu Button */}
+                <div className="lg:hidden">
+                    <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        type="button"
+                        className="p-2 text-indigo-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 rounded-lg transition-colors duration-200"
+                    >
+                        {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+                    </button>
+                </div>
+            </motion.nav>
+
+            {/* Placeholder div for fixed navbar height */}
+            <div className="h-20"></div>
+            
+            {/* Mobile Menu (Animated Slide-out) */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        variants={mobileMenuVariants}
+                        className="fixed inset-x-0 top-[70px] bg-gray-900/95 backdrop-blur-lg shadow-2xl z-40 lg:hidden border-t border-indigo-900"
+                    >
+                        <motion.div 
+                            variants={containerVariants}
+                            className="flex flex-col items-start p-6 space-y-3"
+                        >
+                            <motion.div variants={mobileItemVariants} className='w-full'>
+                                <NavLink title="Home" to="/" onClick={handleLinkClick} />
+                            </motion.div>
+                            <motion.div variants={mobileItemVariants} className='w-full'>
+                                <NavLink title="About" to="/about" onClick={handleLinkClick} />
+                            </motion.div>
+                            <motion.div variants={mobileItemVariants} className='w-full'>
+                                <NavLink title="Services" to="/services" onClick={handleLinkClick} />
+                            </motion.div>
+                             <motion.div variants={mobileItemVariants} className='w-full'>
+                                <NavLink title="Insights" to="/insights" onClick={handleLinkClick} />
+                            </motion.div>
+                            
+                            {/* Dropdown in Mobile - handled by NavLink's internal logic */}
+                            <motion.div variants={mobileItemVariants} className="w-full">
+                                <NavLink title="Industries" dropdownItems={industriesDropdown} onClick={handleLinkClick} />
+                            </motion.div>
+                            <motion.div variants={mobileItemVariants} className="w-full">
+                                <NavLink title="Resources" dropdownItems={resourcesDropdown} onClick={handleLinkClick} />
+                            </motion.div>
+                            
+                            {/* Mobile Contact Button */}
+                            <motion.div variants={mobileItemVariants} className="w-full pt-4">
+                                <Link to="/contact" onClick={handleLinkClick}
+                                    className="w-full text-center px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-bold shadow-md hover:opacity-90 transition-opacity duration-300 block"
+                                >
+                                    Start a Consultation
+                                </Link>
+                            </motion.div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
-export default Navbar;
+// Container variants for mobile stagger (defined outside for clarity)
+const containerVariants = {
+    visible: {
+        transition: {
+            staggerChildren: 0.05,
+        },
+    },
+};
+
+export default PremiumNavbar;

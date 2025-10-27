@@ -6,6 +6,9 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './Components/HomePage/Home'
 import Insights from './Components/Insight/Insights'
 import FooterOne from './common/FooterOne'
+import ServicePage from './Components/Service/Components/ServicePage'
+import AboutUs from './Components/AboutUs/Componets/AboutUs'
+import ContactFormPage from './Components/ContactPage/ContactFormPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,11 +25,11 @@ function App() {
         {/* CRITICAL STEP: This maps /insights to your InsightsPage component */}
         <Route path="/insights" element={<Insights/>} />
         
-        <Route path="/about" element={<div>About Page Content</div>} />
-        <Route path="/services" element={<div>Services Page Content</div>} />
+        <Route path="/about" element={<AboutUs/>} />
+        <Route path="/services" element={<ServicePage/>} />
         <Route path="/case-studies" element={<div>Case Studies Page Content</div>} />
-        <Route path="/contact" element={<div>Contact Us Page Content</div>} />
-        {/* ... other routes for /services, /case-studies, etc. */}
+        <Route path="/contact" element={<ContactFormPage/>} />
+        
       </Routes>
       <FooterOne/>
 

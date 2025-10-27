@@ -137,7 +137,8 @@ const ClientTestimonialsOne = () => {
           <p className="text-lg font-semibold text-emerald-600 uppercase tracking-widest mb-2">
             Clients
           </p>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+          <h1 className="uppercase text-5xl font-semibold text-gray-900 tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600
+">
             Building Lasting Success Through Client Partnerships
           </h1>
         </header>
