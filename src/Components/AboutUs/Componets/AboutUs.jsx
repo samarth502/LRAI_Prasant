@@ -4,7 +4,7 @@ import AboutUsOne from './AboutUsOne'
 const AboutUs = () => {
   return (
    <>
-   <AboutUsOne/>
+   <About  UsOne/>
    </>
   )
 }

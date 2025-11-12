@@ -64,7 +64,7 @@ const FooterOne = () => {
                     <div className="md:col-span-2 lg:col-span-2 space-y-4">
                         <LogoPlaceholder />
                         <p className="text-gray-600 max-w-sm mt-4 text-sm">
-                            3rd Floor, Tower-4, Tapasya Corp Heights, Sector-126, Noida, Uttar Pradesh 201301
+                           Corporate office - 195, 43rd Main Rd,Chartered House, Jawaregowda Nagar, Javarandoddi, Rajarajeshwari Nagar, Bengaluru, Karnataka 560098
                         </p>
                         
                         {/* Social Icons */}
@@ -102,10 +102,10 @@ const FooterOne = () => {
                          <div className="flex items-center space-x-2">
                             <Mail className="w-5 h-5 text-indigo-500 flex-shrink-0" />
                             <a 
-                                href="mailto:XYZ@innovationm.com" 
+                                href="mailto:info@rightleft.ai" 
                                 className="text-gray-600 hover:text-emerald-500 transition-colors duration-200 text-base font-medium"
                             >
-                          XYZ@innovationm
+                      info@rightleft.ai
                             </a>
                          </div>
                          <p className="mt-2 text-sm text-gray-500">We respond within 24 hours.</p>

@@ -182,10 +182,12 @@ const UltraProProducts = () => {
           <h1 className="uppercase text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
             Our Industry-Specific <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Agentic Products</span>
           </h1>
+
+
           <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             Discover how our suite of autonomous AI agents collaborate with your teams to solve complex industry challenges.
           </p>
-
+          6
         </div>
 
         {/* Animated Product Grid Container */}

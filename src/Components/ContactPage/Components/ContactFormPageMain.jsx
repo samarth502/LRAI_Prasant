@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from 'emailjs-com';
 import {
   Mail, Phone, MapPin, Send, User, MessageSquare, Briefcase, CheckCircle
 } from 'lucide-react';
@@ -37,53 +38,47 @@ const useFormState = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setStatus('submitting');
-        
-        // --- REAL EMAIL SUBMISSION INTEGRATION POINT ---
-        // To send data to samatrydebl@gmail.com, you MUST integrate a backend service here.
-        // Recommended services include:
-        // 1. Formspree: Easiest setup for static sites.
-        // 2. EmailJS: Send emails directly from JS (requires service setup).
-        // 3. Serverless Function (e.g., Firebase Cloud Function, AWS Lambda) that calls a mailing API (like SendGrid).
-        
-        // EXAMPLE MOCK API CALL:
-        console.log("Form Data Submitted:", formData);
+   const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus('submitting');
 
-        try {
-            // Simulate network delay and successful submission
-            await new Promise(resolve => setTimeout(resolve, 1500)); 
-            
-            // If using Formspree, you would fetch here:
-            /*
-            const response = await fetch("YOUR_FORMSPREE_ENDPOINT", {
-                method: "POST",
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            });
-            if (response.ok) {
-                setStatus('success');
-                setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
-            } else {
-                throw new Error('Server error');
-            }
-            */
-            
-            // Mock Success:
-            setStatus('success');
-            setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
-            
-        } catch (error) {
-            console.error("Submission Error:", error);
-            setStatus('error');
-        }
+  try {
+    // Send email using EmailJS
+    const result = await emailjs.send(
+      'YOUR_SERVICE_ID',        // Replace with your EmailJS service ID
+      'YOUR_TEMPLATE_ID',       // Replace with your EmailJS template ID
+      {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      },
+      'YOUR_PUBLIC_KEY'         // Replace with your EmailJS public key
+    );
 
-        // Reset status after a delay for the user to see the message
-        setTimeout(() => {
-            setStatus('idle');
-        }, 5000); 
-    };
+    console.log("Email successfully sent!", result.text);
+    setStatus('success');
+    setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
+  } catch (error) {
+    console.error("Email sending error:", error);
+
+    
+    setStatus('error');
+
+
+
+
+
+    
+  }
+
+
+  // Reset status after a short delay
+  setTimeout(() => {
+    setStatus('idle');
+  }, 5000);
+};
+
 
     return { formData, status, handleChange, handleSubmit };
 };

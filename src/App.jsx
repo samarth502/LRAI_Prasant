@@ -9,6 +9,8 @@ import FooterOne from './common/FooterOne'
 import ServicePage from './Components/Service/Components/ServicePage'
 import AboutUs from './Components/AboutUs/Componets/AboutUs'
 import ContactFormPage from './Components/ContactPage/ContactFormPage'
+import CareerOne from './Components/Career/Component/CareerOne'
+import AiCallCenter from './Components/Service/Components/AiCallCenter/AiCallCenter'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +31,14 @@ function App() {
         <Route path="/services" element={<ServicePage/>} />
         <Route path="/case-studies" element={<div>Case Studies Page Content</div>} />
         <Route path="/contact" element={<ContactFormPage/>} />
+         <Route path="/career" element={<CareerOne/>} />
+         <Route path="/AiCallCenterOne" element={<AiCallCenter/>} />
+         {/* <Route path="/RinggUseCases" element={<RinggUseCases/>} /> */}
+
+         
+
+         
+        
         
       </Routes>
       <FooterOne/>

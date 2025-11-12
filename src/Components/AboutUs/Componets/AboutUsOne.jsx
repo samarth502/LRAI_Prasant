@@ -93,6 +93,8 @@ const AICoreVector = () => (
     </svg>
 );
 
+// Explore Our AI solutions
+
 
 // Core Value Card Component
 const ValueCard = ({ icon: Icon, title, description, delay }) => (
