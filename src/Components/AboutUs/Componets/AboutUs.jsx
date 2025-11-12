@@ -1,10 +1,11 @@
 import React from 'react'
-import AboutUsOne from './AboutUsOne'
+import AboutUsPage from './AboutUsPage'
+// import AboutUsOne from './AboutUsOne'
 
 const AboutUs = () => {
   return (
    <>
-   <About  UsOne/>
+   <AboutUsPage/>
    </>
   )
 }
