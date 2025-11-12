@@ -16,7 +16,7 @@ const Home = () => {
      {/* The component with the dynamic scrolling animation */}
       <AnimatedResults />
 
-      <UltraProProducts/>
+      {/* <UltraProProducts/> */}
       {/* <IndustriesTransformedOne/> */}
       <ClientTestimonialsOne/>
       <PartnerWithInovative/>
