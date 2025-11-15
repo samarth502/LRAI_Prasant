@@ -124,7 +124,7 @@ import React, { useState, useEffect } from 'react';
                     playsInline
                 >
                     {/* Updated to user's specified local video source */}
-                    <source src="0_Robot_Ai_3840x2160.mov" type="video/mp4" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/1920x1080/000000/1e0a3b?text=AI+Background"; }}/>
+                    <source src="0_Robot_Ai_3840x2160 (1).mov" type="video/mp4" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/1920x1080/000000/1e0a3b?text=AI+Background"; }}/>
                     Your browser does not support the video tag.
                 </video>
 
